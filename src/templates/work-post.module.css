@@ -1,0 +1,13 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 2em
+}
+.heroImage {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+}
