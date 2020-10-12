@@ -6,7 +6,9 @@ import styles from './article-preview.module.css'
 
 export default ({ article }) => (
   <div className={styles.preview}>
-    <Img alt="" fluid={article.heroImage.fluid} />
+    <Link to={`/work/${article.slug}`}>
+      <Img alt="" fluid={article.heroImage.fluid} />
+    </Link>
     <h3 className={styles.previewTitle}>
       <Link to={`/work/${article.slug}`}>{article.title}</Link>
     </h3>
@@ -16,11 +18,5 @@ export default ({ article }) => (
         __html: article.description.childMarkdownRemark.html,
       }}
     />
-    {article.technologies &&
-      article.technologies.map((technologies) => (
-        <p className={styles.tag} key={technologies}>
-          {technologies}
-        </p>
-      ))}
   </div>
 )

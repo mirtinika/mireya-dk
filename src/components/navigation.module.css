@@ -17,4 +17,5 @@
 
 .navigationItem a {
   text-decoration: none;
+  text-transform: uppercase;
 }
