@@ -12,18 +12,18 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-          <Helmet title={siteTitle} />
-          <div className="wrapper">
-            <ul className="article-list">
-              {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+        <Helmet title={siteTitle} />
+        <div className="wrapper">
+          <ul className="article-list">
+            {posts.map(({ node }) => {
+              return (
+                <li key={node.slug}>
+                  <ArticlePreview article={node} />
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </Layout>
     )
   }
@@ -38,14 +38,19 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulProject(sort: {fields: createdAt, order: ASC}) {
+    allContentfulProject(sort: { fields: createdAt, order: ASC }) {
       edges {
         node {
           title
           slug
           technologies
           heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: FILL, quality:100) {
+            fluid(
+              maxWidth: 350
+              maxHeight: 350
+              resizingBehavior: FILL
+              quality: 100
+            ) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }

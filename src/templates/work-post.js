@@ -29,8 +29,7 @@ class WorkPostTemplate extends React.Component {
               style={{
                 display: 'block',
               }}
-            >
-            </p>
+            ></p>
             <div
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
@@ -55,7 +54,7 @@ export const pageQuery = graphql`
     contentfulProject(slug: { eq: $slug }) {
       title
       heroImage {
-        fluid(maxWidth: 1180, resizingBehavior: FILL, quality:100) {
+        fluid(maxWidth: 1180, resizingBehavior: FILL, quality: 100) {
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
