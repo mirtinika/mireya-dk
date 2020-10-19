@@ -1,7 +1,7 @@
 import React from 'react'
 
+import styles from './container.module.css'
+
 export default ({ children }) => (
-  <div style={{ height: '100vh' }}>
-    {children}
-  </div>
+  <div className={styles.container}>{children}</div>
 )
