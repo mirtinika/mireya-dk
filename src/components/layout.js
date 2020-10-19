@@ -14,7 +14,7 @@ class Layout extends React.Component {
       <Container>
         <Navigation />
         <Wrapper>{children}</Wrapper>
-        <Footer/>
+        <Footer />
       </Container>
     )
   }
