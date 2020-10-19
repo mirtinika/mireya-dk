@@ -8,14 +8,18 @@ import styles from './footer.module.css'
 export default ({ data }) => (
   <div className={styles.footer}>
     <Wrapper>
-      <div>
+      <div className={styles.content}>
         <StaticQuery
           query={graphql`
             query FooterQuery {
               allContentfulFooter {
                 edges {
                   node {
-                    buildWith
+                    resources {
+                      childMarkdownRemark {
+                        html
+                      }
+                    }
                   }
                 }
               }
@@ -23,7 +27,13 @@ export default ({ data }) => (
           `}
           render={(data) => {
             const [footer] = data.allContentfulFooter.edges
-            return footer.node.buildWith.map((item) => <p>{item}</p>)
+            return (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: footer.node.resources.childMarkdownRemark.html,
+                }}
+              />
+            )
           }}
         />
       </div>
