@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import get from 'lodash/get'
@@ -30,7 +31,8 @@ class WorkPostTemplate extends React.Component {
                 display: 'block',
               }}
             ></p>
-            <div className={postStyles.body}
+            <div
+              className={postStyles.body}
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}

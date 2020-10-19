@@ -11,7 +11,7 @@ class RootIndex extends React.Component {
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
-      <Layout location={this.props.location}>
+      <Layout>
         <Helmet title={siteTitle} />
         <Hero data={author.node} />
       </Layout>
@@ -39,7 +39,7 @@ export const pageQuery = graphql`
           }
           title
           heroImage: image {
-            fluid(maxWidth: 1286) {
+            fluid(maxWidth: 1180, quality: 100) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
