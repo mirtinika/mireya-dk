@@ -5,13 +5,14 @@ import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
+
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
-      <Layout location={this.props.location}>
+      <Layout>
         <Helmet title={siteTitle} />
         <Hero data={author.node} />
       </Layout>

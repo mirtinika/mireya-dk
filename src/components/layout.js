@@ -1,27 +1,23 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import fonts from './fonts.css'
-import base from './base.css'
+
 import Container from './container'
 import Navigation from './navigation'
+import Footer from './footer'
+import Wrapper from './wrapper'
+import base from './base.css'
+import fonts from './fonts.css'
 
-class Template extends React.Component {
+class Layout extends React.Component {
   render() {
-    const { location, children } = this.props
-    let header
-
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
-
+    const { children } = this.props
     return (
       <Container>
         <Navigation />
-        {children}
+        <Wrapper>{children}</Wrapper>
+        <Footer/>
       </Container>
     )
   }
 }
 
-export default Template
+export default Layout

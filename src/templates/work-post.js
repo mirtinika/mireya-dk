@@ -30,7 +30,8 @@ class WorkPostTemplate extends React.Component {
                 display: 'block',
               }}
             ></p>
-            <div className={postStyles.body}
+            <div
+              className={postStyles.body}
               dangerouslySetInnerHTML={{
                 __html: post.body.childMarkdownRemark.html,
               }}
