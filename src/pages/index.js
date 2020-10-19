@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 
-
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -40,7 +39,7 @@ export const pageQuery = graphql`
           }
           title
           heroImage: image {
-            fluid(maxWidth: 1286) {
+            fluid(maxWidth: 1180, quality: 100) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }

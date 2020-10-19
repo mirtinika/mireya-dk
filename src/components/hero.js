@@ -9,6 +9,9 @@ export default ({ data }) => (
       className={styles.heroImage}
       alt={data.name}
       fluid={data.heroImage.fluid}
+      imgStyle={{
+        objectFit: 'contain',
+      }}
     />
     <div className={styles.heroDetails}>
       <h3 className={styles.heroHeadline}>{data.name}</h3>
