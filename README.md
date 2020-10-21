@@ -1,5 +1,7 @@
 
-# Welcome to the repo of my JAMStack portfolio website
+# JAMStack portfolio
+
+Gastby + Contentful + Netlify
 
 ## Created from gatsby-contentful-starter
 
